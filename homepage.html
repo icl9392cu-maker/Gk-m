@@ -1,1 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GK Questions Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #ccc;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .question {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .option {
+            margin: 8px 0;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 16px;
+            background: #2196f3;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0d8ae5;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>GK Questions Quiz</h2>
+
+    <div id="quiz-box"></div>
+
+    <button onclick="nextQuestion()">Next</button>
+
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    const questions = [
+        {
+            q: "Which is the largest planet in the Solar System?",
+            options: ["Earth", "Mars", "Jupiter", "Venus"],
+            answer: 2
+        },
+        {
+            q: "Who wrote the National Anthem of India?",
+            options: ["Tagore", "Gandhi", "Nehru", "Sarojini"],
+            answer: 0
+        },
+        {
+            q: "What is the capital of Australia?",
+            options: ["Sydney", "Melbourne", "Canberra", "Perth"],
+            answer: 2
+        }
+    ];
+
+    let index = 0;
+
+    function loadQuestion() {
+        const q = questions[index];
+        let html = `<div class='question'>${index + 1}. ${q.q}</div>`;
+        q.options.forEach((opt, i) => {
+            html += `
+                <div class='option'>
+                    <input type='radio' name='opt' value='${i}'> ${opt}
+                </div>`;
+        });
+        document.getElementById("quiz-box").innerHTML = html;
+        document.getElementById("result").innerHTML = "";
+    }
+
+    function nextQuestion() {
+        const selected = document.querySelector("input[name='opt']:checked");
+        if (!selected) {
+            alert("Please select an option!");
+            return;
+        }
+
+        const answer = parseInt(selected.value);
+        if (answer === questions[index].answer) {
+            document.getElementById("result").innerHTML = "Correct!";
+        } else {
+            document.getElementById("result").innerHTML = "Wrong!";
+            document.getElementById("result").style.color = "red";
+        }
+
+        index++;
+        if (index < questions.length) {
+            setTimeout(loadQuestion, 1000);
+        } else {
+            setTimeout(() => {
+                document.getElementById("quiz-box").innerHTML = "<h3>Quiz Completed!</h3>";
+                document.getElementById("result").innerHTML = "";
+            }, 1000);
+        }
+    }
+
+    loadQuestion();
+</script>
+
+</body>
+</html>
 
