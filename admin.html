@@ -1,45 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Admin Panel</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script defer src="js/admin.js"></script>
-  <script defer src="js/theme.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin Panel - GK Quiz</title>
+<link rel="stylesheet" href="css/style.css">
+<script defer src="js/admin.js"></script>
+<script defer src="js/theme.js"></script>
 </head>
 <body>
-
-<header>
-  <h1>Admin Panel</h1>
-  <button id="themeToggle">🌙</button>
+<header class="site-header">
+<button class="back-btn" onclick="history.back()">⟵ Back</button>
+<h1>Admin Panel</h1>
+<div></div>
 </header>
 
-<div class="container">
-  <h2>Add New Question</h2>
 
-  <label>Category:</label>
-  <select id="category">
-    <option value="general">General</option>
-    <option value="science">Science</option>
-    <option value="sports">Sports</option>
-  </select>
+<main class="container">
+<h2>Add New Question (stored locally)</h2>
+<label>Category:</label>
+<select id="category">
+<option value="general">General</option>
+<option value="science">Science</option>
+<option value="sports">Sports</option>
+<option value="history">History</option>
+<option value="geography">Geography</option>
+</select>
 
-  <label>Question:</label>
-  <input id="question" type="text">
 
-  <label>Options (4):</label>
-  <input id="op1" placeholder="Option 1">
-  <input id="op2" placeholder="Option 2">
-  <input id="op3" placeholder="Option 3">
-  <input id="op4" placeholder="Option 4">
+<label>Question:</label>
+<input id="question" type="text" placeholder="Enter question">
 
-  <label>Correct Answer (1-4):</label>
-  <input id="answer" type="number">
 
-  <button class="btn" onclick="addQuestion()">Add Question</button>
+<label>Options (4):</label>
+<input id="op1" placeholder="Option 1">
+<input id="op2" placeholder="Option 2">
+<input id="op3" placeholder="Option 3">
+<input id="op4" placeholder="Option 4">
 
-  <p id="msg"></p>
+
+<label>Correct Answer (1-4):</label>
+<input id="answer" type="number" min="1" max="4">
+
+
+<div style="margin-top:12px">
+<button class="btn" onclick="addQuestion()">Add Question</button>
+<button class="btn secondary" onclick="exportQuestions()">Export JSON</button>
 </div>
 
+
+<p id="msg"></p>
+
+
+<hr>
+<h3>Existing questions (local)</h3>
+<pre id="dump" style="white-space:pre-wrap"></pre>
+</main>
 </body>
 </html>
