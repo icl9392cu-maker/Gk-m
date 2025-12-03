@@ -1,22 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>GK Quiz | Home</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script defer src="js/theme.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GK Quiz | Home</title>
+<link rel="stylesheet" href="css/style.css">
+<script defer src="js/theme.js"></script>
+<script defer src="js/main.js"></script>
 </head>
 <body>
-  <header>
-    <h1>GK Quiz</h1>
-    <button id="themeToggle">🌙</button>
-  </header>
+<header class="site-header">
+<div class="left">
+<button class="back-btn" onclick="history.back()">⟵ Back</button>
+</div>
+<div class="brand"><h1>GK Quiz</h1></div>
+<div class="right">
+<button id="themeToggle" aria-label="Toggle theme">🌙</button>
+<button id="loginBtn" class="auth-btn">Login</button>
+</div>
+</header>
 
-  <div class="container center">
-    <h2>Welcome to the GK Quiz Website</h2>
-    <a href="categories.html" class="btn">Start Quiz</a>
-    <a href="admin.html" class="btn secondary">Admin Panel</a>
-  </div>
 
+<main class="container center">
+<h2>Welcome to the GK Quiz Website</h2>
+
+
+<div class="grid">
+<a href="categories.html" class="card btn">▶ Start Quiz</a>
+<a href="practice.html" class="card btn">📘 Practice Mode</a>
+<a href="leaderboard.html" class="card btn">🏆 Leaderboard</a>
+<a href="admin.html" class="card btn secondary">⚙ Admin Panel</a>
+<a href="about.html" class="card btn feature">ℹ About</a>
+<a href="contact.html" class="card btn feature">📩 Contact</a>
+</div>
+
+
+<section class="features">
+<h3>More features</h3>
+<ul>
+<li>Multiple categories</li>
+<li>Dark/Light theme</li>
+<li>Save high scores online (optional)</li>
+<li>Responsive layout for mobile</li>
+</ul>
+</section>
+
+
+</main>
+
+
+<script defer src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script defer src="js/auth.js"></script>
 </body>
 </html>
