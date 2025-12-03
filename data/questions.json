@@ -1,0 +1,23 @@
+{
+  "general": [
+    {
+      "q": "Largest planet in the solar system?",
+      "options": ["Earth", "Mars", "Jupiter", "Venus"],
+      "answer": 3
+    }
+  ],
+  "science": [
+    {
+      "q": "Water chemical formula?",
+      "options": ["CO2", "H2O", "O2", "HO"],
+      "answer": 2
+    }
+  ],
+  "sports": [
+    {
+      "q": "How many players in a cricket team?",
+      "options": ["9", "10", "11", "12"],
+      "answer": 3
+    }
+  ]
+}
