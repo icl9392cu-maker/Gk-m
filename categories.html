@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GK Categories</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/theme.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>Select Category</h1>
+  <button id="themeToggle">🌙</button>
+</header>
+
+<div class="container">
+  <div class="card" onclick="startQuiz('general')">General Knowledge</div>
+  <div class="card" onclick="startQuiz('science')">Science</div>
+  <div class="card" onclick="startQuiz('sports')">Sports</div>
+</div>
+
+<script>
+  function startQuiz(cat){
+    window.location.href = "quiz.html?category=" + cat;
+  }
+</script>
+
+</body>
+</html>
