@@ -1,66 +1,33 @@
-body {
-  font-family: Arial;
-  margin: 0;
-  padding: 0;
-  background: #f4f4f4;
-  color: #222;
-  transition: 0.3s;
-}
+/* Basic reset */
+*{box-sizing:border-box}
+body{font-family:Inter,Arial,Helvetica,sans-serif;margin:0;padding:0;background:#f4f4f4;color:#222;transition:background .25s,color .25s}
 
-.dark {
-  background: #111;
-  color: #fff;
-}
 
-header {
-  background: #6200ea;
-  color: white;
-  padding: 15px;
-  display: flex;
-  justify-content: space-between;
-}
+.site-header{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;background:#6200ea;color:#fff}
+.site-header .brand h1{margin:0;font-size:20px}
+.back-btn{background:transparent;border:1px solid rgba(255,255,255,0.2);color:#fff;padding:6px 10px;border-radius:6px;cursor:pointer}
+.auth-btn{margin-left:8px;padding:6px 10px}
 
-.container {
-  width: 90%;
-  max-width: 600px;
-  margin: 30px auto;
-}
 
-.center {
-  text-align: center;
-}
+.container{width:95%;max-width:900px;margin:28px auto}
+.center{text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:18px}
+.card{background:#fff;padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:600}
+.btn{display:inline-block;text-decoration:none;color:inherit}
+.btn.secondary{background:#333;color:#fff}
+.feature{background:#e8f0ff}
 
-.card {
-  padding: 20px;
-  margin: 15px 0;
-  background: white;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 0 10px #ccc;
-  font-size: 20px;
-}
 
-.card:hover {
-  background: #eee;
-}
+.features{margin-top:18px;text-align:left}
 
-.btn {
-  display: block;
-  padding: 12px;
-  background: #6200ea;
-  color: white;
-  text-align: center;
-  margin: 10px auto;
-  border-radius: 6px;
-  text-decoration: none;
-}
 
-.btn.secondary {
-  background: #333;
-}
+input,select,textarea{width:100%;padding:10px;margin:8px 0;border-radius:6px;border:1px solid #ccc}
 
-input, select {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-}
+
+/* dark */
+body.dark{background:#0f0f14;color:#e6e6e6}
+body.dark .site-header{background:#0b0b0d}
+body.dark .card{background:#151516;box-shadow:none}
+
+
+@media(max-width:520px){.site-header{padding:10px}.brand
