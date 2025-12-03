@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>GK Categories</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script defer src="js/theme.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Categories - GK Quiz</title>
+<link rel="stylesheet" href="css/style.css">
+<script defer src="js/theme.js"></script>
 </head>
 <body>
-
-<header>
-  <h1>Select Category</h1>
-  <button id="themeToggle">🌙</button>
+<header class="site-header">
+<button class="back-btn" onclick="history.back()">⟵ Back</button>
+<h1>Categories</h1>
+<div></div>
 </header>
 
-<div class="container">
-  <div class="card" onclick="startQuiz('general')">General Knowledge</div>
-  <div class="card" onclick="startQuiz('science')">Science</div>
-  <div class="card" onclick="startQuiz('sports')">Sports</div>
+
+<main class="container">
+<div class="cards">
+<div class="card" onclick="startQuiz('general')">General Knowledge</div>
+<div class="card" onclick="startQuiz('science')">Science</div>
+<div class="card" onclick="startQuiz('sports')">Sports</div>
+<div class="card" onclick="startQuiz('history')">History</div>
+<div class="card" onclick="startQuiz('geography')">Geography</div>
 </div>
+</main>
+
 
 <script>
-  function startQuiz(cat){
-    window.location.href = "quiz.html?category=" + cat;
-  }
+function startQuiz(cat){
+window.location.href = `quiz.html?category=${cat}`;
+}
 </script>
-
 </body>
 </html>
